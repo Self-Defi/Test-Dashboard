@@ -3,67 +3,267 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>First Build — AI automation system</title>
-  <meta name="description" content="Generated from a single thought into a first-build scaffold." />
+  <title>Receivables & Expenditures Dashboard</title>
+  <meta name="description" content="A lightweight dashboard to track receivables and expenditures for a clothing company." />
+  <meta name="theme-color" content="#070b14" />
+
   <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Social Preview (optional) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Receivables & Expenditures Dashboard" />
+  <meta property="og:description" content="Track cash-in, cash-out, and overdue invoices with a clean, UI-only dashboard." />
 </head>
+
 <body>
+  <div class="bgGrid" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"></div>
+      <div class="brandText">
+        <h1>Clothing Ops Dashboard</h1>
+        <p>Receivables • Expenditures • Cash Position</p>
+      </div>
+    </div>
+
+    <div class="pillRow">
+      <span class="pill">UI-only</span>
+      <span class="pill">HTML + CSS</span>
+      <span class="pill ok">Deterministic</span>
+    </div>
+  </header>
+
   <main class="wrap">
-    <header class="hero">
-      <h1>First Build — AI automation system</h1>
-      <p class="muted">Generated from a single Thought into an inspectable starting point.</p>
-    </header>
+    <section class="controls">
+      <div class="controlCard">
+        <div class="controlTitle">Reporting Window</div>
+        <div class="controlValue">Last 30 days</div>
+        <div class="controlMeta">Change later (needs JS/back-end)</div>
+      </div>
 
-    <section class="card">
-      <h2>The Thought</h2>
-      <p>I want to build a dashboard to track my receivables and expenditures form my clothing company</p>
+      <div class="controlCard">
+        <div class="controlTitle">Currency</div>
+        <div class="controlValue">USD</div>
+        <div class="controlMeta">Format locked</div>
+      </div>
+
+      <div class="controlCard">
+        <div class="controlTitle">Data Source</div>
+        <div class="controlValue">Manual / CSV</div>
+        <div class="controlMeta">Hook later</div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Canonical Image Prompt (SoT)</h2>
-      <pre>A high-fidelity system architecture visualization of a &quot;AI automation system&quot; designed to solve:
-&quot;I want to build a dashboard to track my receivables and expenditures form my clothing company&quot;
+    <section class="kpis">
+      <article class="card kpi">
+        <div class="kpiTop">
+          <div class="kpiLabel">Total Receivables</div>
+          <span class="badge cyan">AR</span>
+        </div>
+        <div class="kpiValue">$42,380</div>
+        <div class="kpiSub">Open invoices + outstanding balances</div>
+      </article>
 
-STYLE (locked):
-- Dark technical HUD interface on a subtle square grid background (like an ops / infrastructure diagram)
-- Clean metallic panels with soft inner shadows, faint neon edge glow
-- High contrast, low saturation, engineered and deterministic (NOT artistic)
-- Minimal color accents only: cool blue/cyan + optional small amber indicators
-- Crisp typography, sharp lines, professional documentation-grade
+      <article class="card kpi">
+        <div class="kpiTop">
+          <div class="kpiLabel">Overdue</div>
+          <span class="badge amber">Risk</span>
+        </div>
+        <div class="kpiValue">$9,240</div>
+        <div class="kpiSub">Invoices past due date</div>
+      </article>
 
-LAYOUT (locked):
-- 16:9 landscape
-- Title centered at top (short, technical)
-- Four vertical lanes (left-to-right), each with a header bar:
-  1) INPUTS
-  2) PROCESSING &amp; LOGIC
-  3) AUTOMATION
-  4) OUTPUTS
-- Boxes stacked within lanes, connected with clear arrows (left-to-right flow)
-- Optional bottom band: &quot;Databases&quot; or &quot;On-Chain / Storage&quot; with 3–4 small database icons
+      <article class="card kpi">
+        <div class="kpiTop">
+          <div class="kpiLabel">Expenditures</div>
+          <span class="badge">Ops</span>
+        </div>
+        <div class="kpiValue">$18,615</div>
+        <div class="kpiSub">COGS + operating expenses</div>
+      </article>
 
-CONTENT RULES (locked):
-- Each box label is 1–3 words max (e.g., &quot;Lead Enrichment&quot;, &quot;Workflow Automation&quot;)
-- Use simple monochrome line icons inside some boxes (email, web, shield, database, charts)
-- No people, no characters, no scenery, no abstract art
-- No branding, no logos, no marketing copy, no UI mockups/screenshots
-- This is an architecture diagram suitable for a GitHub README / technical documentation
-
-RENDERING:
-- Photorealistic lighting is NOT required; it should look like a premium digital infographic / architecture plate.
-- Keep it consistent and repeatable across different thoughts.</pre>
-      <h3>Negative Prompt</h3>
-      <pre>Avoid:
-- White backgrounds, colorful cartoons, hand-drawn sketches
-- 3D scenes, people, mascots, faces
-- Marketing posters, product UI mockups, website screenshots
-- Abstract concept art, messy layouts, cluttered text paragraphs
-- Overly saturated neon rainbow palettes
-- Long labels, dense sentences in boxes</pre>
+      <article class="card kpi">
+        <div class="kpiTop">
+          <div class="kpiLabel">Net Cash Flow</div>
+          <span class="badge ok">Net</span>
+        </div>
+        <div class="kpiValue">$6,120</div>
+        <div class="kpiSub">Cash-in minus cash-out</div>
+      </article>
     </section>
 
-    <footer class="foot">
-      <span>Ownership First · Powered by Self-Defi</span>
+    <section class="grid2">
+      <article class="card panel">
+        <div class="panelHead">
+          <h2>Receivables Aging</h2>
+          <p>Bucketed view of outstanding AR</p>
+        </div>
+
+        <div class="bars">
+          <div class="barRow">
+            <div class="barLabel">0–15 days</div>
+            <div class="barTrack"><div class="barFill w72"></div></div>
+            <div class="barValue">$18.4k</div>
+          </div>
+          <div class="barRow">
+            <div class="barLabel">16–30 days</div>
+            <div class="barTrack"><div class="barFill w48"></div></div>
+            <div class="barValue">$10.9k</div>
+          </div>
+          <div class="barRow">
+            <div class="barLabel">31–60 days</div>
+            <div class="barTrack"><div class="barFill w28"></div></div>
+            <div class="barValue">$6.9k</div>
+          </div>
+          <div class="barRow">
+            <div class="barLabel">60+ days</div>
+            <div class="barTrack"><div class="barFill w22 danger"></div></div>
+            <div class="barValue">$6.2k</div>
+          </div>
+        </div>
+
+        <div class="footNote">
+          Action: focus collections on <span class="dangerText">60+ days</span> first.
+        </div>
+      </article>
+
+      <article class="card panel">
+        <div class="panelHead">
+          <h2>Spend Breakdown</h2>
+          <p>Where cash is leaving the business</p>
+        </div>
+
+        <ul class="breakdown">
+          <li>
+            <span class="dot c1" aria-hidden="true"></span>
+            <span class="item">Materials / COGS</span>
+            <span class="amt">$8,420</span>
+          </li>
+          <li>
+            <span class="dot c2" aria-hidden="true"></span>
+            <span class="item">Shipping / Fulfillment</span>
+            <span class="amt">$3,180</span>
+          </li>
+          <li>
+            <span class="dot c3" aria-hidden="true"></span>
+            <span class="item">Marketing</span>
+            <span class="amt">$2,740</span>
+          </li>
+          <li>
+            <span class="dot c4" aria-hidden="true"></span>
+            <span class="item">Software / Tools</span>
+            <span class="amt">$1,210</span>
+          </li>
+          <li>
+            <span class="dot c5" aria-hidden="true"></span>
+            <span class="item">Misc Ops</span>
+            <span class="amt">$3,065</span>
+          </li>
+        </ul>
+
+        <div class="footNote">
+          Goal: keep marketing efficient; watch tool creep.
+        </div>
+      </article>
+    </section>
+
+    <section class="grid2">
+      <article class="card panel">
+        <div class="panelHead">
+          <h2>Top Open Invoices</h2>
+          <p>Largest balances first</p>
+        </div>
+
+        <div class="tableWrap" role="region" aria-label="Top open invoices" tabindex="0">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Customer</th>
+                <th>Invoice</th>
+                <th>Due</th>
+                <th class="right">Balance</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Desert Supply Co.</td>
+                <td>#INV-1042</td>
+                <td>Jan 03</td>
+                <td class="right">$4,980</td>
+                <td><span class="tag bad">Overdue</span></td>
+              </tr>
+              <tr>
+                <td>Sunset Boutique</td>
+                <td>#INV-1051</td>
+                <td>Jan 18</td>
+                <td class="right">$3,250</td>
+                <td><span class="tag warn">Due soon</span></td>
+              </tr>
+              <tr>
+                <td>Westline Retail</td>
+                <td>#INV-1037</td>
+                <td>Jan 22</td>
+                <td class="right">$2,640</td>
+                <td><span class="tag ok">Open</span></td>
+              </tr>
+              <tr>
+                <td>Local Pop-Up</td>
+                <td>#INV-1060</td>
+                <td>Feb 02</td>
+                <td class="right">$1,980</td>
+                <td><span class="tag ok">Open</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="footNote">
+          Next step (when you add JS): click row → details drawer.
+        </div>
+      </article>
+
+      <article class="card panel">
+        <div class="panelHead">
+          <h2>Cash Position</h2>
+          <p>A simple operational snapshot</p>
+        </div>
+
+        <div class="stack">
+          <div class="stackRow">
+            <div class="stackLabel">Cash on hand</div>
+            <div class="stackValue">$12,700</div>
+          </div>
+          <div class="stackRow">
+            <div class="stackLabel">AR expected (30d)</div>
+            <div class="stackValue">$16,200</div>
+          </div>
+          <div class="stackRow">
+            <div class="stackLabel">AP due (30d)</div>
+            <div class="stackValue dangerText">-$9,840</div>
+          </div>
+          <div class="divider"></div>
+          <div class="stackRow big">
+            <div class="stackLabel">Projected</div>
+            <div class="stackValue">$19,060</div>
+          </div>
+        </div>
+
+        <div class="callout">
+          If overdue AR slips, projected cash drops fast. Build the collections cadence.
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <div class="footerLeft">
+        <div class="footerTitle">Ownership First</div>
+        <div class="footerSub">Static UI — wire your data later</div>
+      </div>
+      <div class="footerRight">
+        Powered by Self-Defi • Test Dashboard
+      </div>
     </footer>
   </main>
 </body>
